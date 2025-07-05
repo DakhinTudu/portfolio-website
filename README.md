@@ -36,4 +36,4 @@ portfolio-project
 - Project showcase
 
 ## Author
-[Your Name] - [Your Contact Information] - [Your Website/Portfolio Link]
+Dakhin Tudu
