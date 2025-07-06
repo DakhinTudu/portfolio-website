@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         // Send email using EmailJS
-        emailjs.send('ervice_xtrm3l2', 'template_2hefg5d', formData)
+        emailjs.send('service_xtrm3l2', 'template_2hefg5d', formData)
             .then(() => {
                 // Show success message
                 formMessage.textContent = 'Message sent successfully!';
@@ -178,20 +178,20 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
     
-    // Download Resume Button
-    const downloadResumeBtn = document.querySelector('.download-resume');
+    // // Download Resume Button
+    // const downloadResumeBtn = document.querySelector('.download-resume');
     
-    downloadResumeBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Replace with your actual resume URL
-        const resumeUrl = 'resources/resumes/Dakhin_Tudu_Java_Developer_Resume.pdf';
+    // downloadResumeBtn.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //     // Replace with your actual resume URL
+    //     const resumeUrl = 'resources/resumes/Dakhin_Tudu_Java_Developer_Resume.pdf';
         
-        // Create a temporary anchor element to trigger download
-        const link = document.createElement('a');
-        link.href = resumeUrl;
-        link.download = 'Dakhin_Tudu_Java_Developer_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
+    //     // Create a temporary anchor element to trigger download
+    //     const link = document.createElement('a');
+    //     link.href = resumeUrl;
+    //     link.download = 'Dakhin_Tudu_Java_Developer_Resume.pdf';
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    // });
 });
