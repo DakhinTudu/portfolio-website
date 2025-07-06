@@ -239,18 +239,60 @@ section {
 }
 
 .hero-image {
-    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    margin: 40px auto;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 
+
 .profile-img {
-    max-width: 400px;
     width: 100%;
-    height: auto;
-   border-radius: 58% 42% 35% 65% / 60% 68% 32% 40% ;
+    height: 100%;
+    border-radius: 50%;
     object-fit: cover;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+    display: block;
+    position: relative;
+    z-index: 1;
+    /* box-shadow: 0 0 0 8px rgba(255,255,255,0.04); */
+    background: #fff; /* fallback for transparent images */
+}
+
+/* Animated gradient glow ring */
+.hero-image::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 101%;
+    height: 101%;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #ff6ec4,
+        #7873f5,
+        #4fd1c5,
+        #ff6ec4
+    );
+    z-index: -1;
+    animation: rotateGlow 6s linear infinite;
+    filter: blur(30px);
+    opacity: 0.8;
+}
+
+/* Actual image */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-title {
@@ -300,7 +342,7 @@ section {
 
 .about-image img {
     width: 100%;
-    border-radius: 58% 42% 35% 65% / 60% 68% 32% 40% ;
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%   ;
     /* box-shadow: var(--shadow); */
     
 }
@@ -795,6 +837,15 @@ section {
         padding: 60px 0;
     }
 }
+/* Glow effect for the hero image */
+@keyframes rotateGlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .skills-grid {
@@ -844,7 +895,16 @@ section {
     }
     
     .profile-img {
-        max-width: 300px;
+        max-width: 350px;
+    }
+   .hero-image {
+        max-width: 100%;
+         aspect-ratio: 1 / 1;
+    }
+    .hero-image::before {
+        width: 100%;
+        height: 100%;
+        filter: blur(18px);
     }
 }
 
@@ -863,6 +923,30 @@ section {
     }
     
     .profile-img {
-        max-width: 250px;
+        max-width: 100%;
+            aspect-ratio: 1 / 1;
+        
     }
+    .hero-image::before {
+        width: 105%;
+        height: 105%;
+        filter: blur(20px);
+    }
+        
+    
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero-image {
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+    .hero-image::before {
+        width: 105%;
+        height: 105%;
+        filter: blur(20px);
+    }
+    
+   
 }
