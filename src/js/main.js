@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('year').textContent = new Date().getFullYear();
     
     // Initialize EmailJS
-    emailjs.init('8ktkUuthi_EVO2Jmg'); // Replace with your EmailJS user ID
+    emailjs.init(EMAILJS_USER_ID);
     
     // Contact Form Submission
     const contactForm = document.getElementById('contactForm');
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         // Send email using EmailJS
-        emailjs.send('service_xtrm3l2', 'template_2hefg5d', formData)
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
             .then(() => {
                 // Show success message
                 formMessage.textContent = 'Message sent successfully!';
