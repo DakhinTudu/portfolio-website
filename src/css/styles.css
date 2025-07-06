@@ -46,9 +46,11 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow-x: hidden;
+
 }
 
 section {
@@ -215,9 +217,13 @@ section {
 /* Hero Section */
 .hero {
     height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     padding-top: 80px;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .container {
@@ -225,6 +231,7 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow: visible;
 }
 
 .hero-content {
@@ -232,6 +239,8 @@ section {
     align-items: center;
     gap: 50px;
     width: 100%;
+    padding: 60px 0;
+
 }
 
 .hero-text {
@@ -246,30 +255,18 @@ section {
     margin: 40px auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
 }
 
-
-.profile-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    position: relative;
-    z-index: 1;
-    /* box-shadow: 0 0 0 8px rgba(255,255,255,0.04); */
-    background: #fff; /* fallback for transparent images */
-}
 
 /* Animated gradient glow ring */
 .hero-image::before {
     content: "";
     position: absolute;
-    top: -15px;
-    left: -15px;
-    width: 101%;
-    height: 101%;
+    /* top: -15px; */
+    /* left: 0px; */
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background: conic-gradient(
         from 0deg,
@@ -278,7 +275,7 @@ section {
         #4fd1c5,
         #ff6ec4
     );
-    z-index: -1;
+    z-index: 1;
     animation: rotateGlow 6s linear infinite;
     filter: blur(30px);
     opacity: 0.8;
@@ -292,7 +289,9 @@ section {
     object-fit: cover;
     display: block;
     position: relative;
-    z-index: 1;
+    z-index: 20;
+    /* box-shadow: 0 0 0 8px rgba(255,255,255,0.04); */
+    background: #fff; /* fallback for transparent images */
 }
 
 .hero-title {
@@ -895,15 +894,15 @@ section {
     }
     
     .profile-img {
-        max-width: 350px;
+        max-width: 100%;
     }
    .hero-image {
         max-width: 100%;
          aspect-ratio: 1 / 1;
     }
     .hero-image::before {
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         filter: blur(18px);
     }
 }
@@ -924,12 +923,12 @@ section {
     
     .profile-img {
         max-width: 100%;
-            aspect-ratio: 1 / 1;
+        aspect-ratio: 1 / 1;
         
     }
     .hero-image::before {
-        width: 105%;
-        height: 105%;
+        width: 100%;
+        height: 100%;
         filter: blur(20px);
     }
         
@@ -943,8 +942,8 @@ section {
         aspect-ratio: 1 / 1;
     }
     .hero-image::before {
-        width: 105%;
-        height: 105%;
+        width: 100%;
+        height: 100%;
         filter: blur(20px);
     }
     
